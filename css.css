@@ -82,8 +82,8 @@
   --frow-effect:1; /*Valor de opacidad del efecto*/
   --guidebook-effect:1; /*Valor de opacidad del efecto*/
   /*Personalización*/
-  --body-img:url(https://2img.net/i.imgur.com/wYU09C7.png);
-  --header-img:url(https://2img.net/i.imgur.com/JVNKqIR.png);
+  --body-img:url(https://i.ibb.co/Hpz4Brb/bg.jpg);
+  --header-img:url(https://i.ibb.co/Hpz4Brb/bg.jpg);
   --header-position:center;
   --body-effect:multiply;
   --header-effect:multiply;
@@ -2602,4 +2602,11 @@ p.pagination {
 
 .ftopic:has(>input) {
   position: relative;
+}
+
+/* CUSTOM */
+
+.desc {
+    width: 60% !important;
+    padding: var(--fs-h5);
 }
