@@ -15,7 +15,7 @@
   --scroll-bckg:var(--deco);
   --scroll-thumb:color-mix(in srgb, var(--accent2) 70%, transparent);
   --scroll-track:var(--border1-c);
-  --cuerpo: #08080880;
+  --cuerpo: #23232380;
   --dbckg0:#080808bf;
   --dbckg1:#0a0a0abf;
   --dbckg2:#0c0c0cbf;
