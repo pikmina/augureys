@@ -1,7 +1,7 @@
 :root, *, *::before, *::after {
   /*Acentos*/
-  --accent1: #76a6bd;
-  --accent2: #607D8B;
+  --accent1: #4a837d;
+  --accent2: #0e897d;
   --links1:#aaa;
   --links2:#ddd;
   /*Fondos transparentes*/
@@ -713,7 +713,7 @@ header a>b {
   line-height:var(--fs-logo1);
   text-transform: capitalize;
   color:transparent;
-  text-shadow:5px 5px var(--accent2);
+  text-shadow: 4px 0px var(--accent2);
   -webkit-text-stroke:1.25px var(--title);
   margin-bottom:calc(var(--fs-logo1) * -.005);
 }
