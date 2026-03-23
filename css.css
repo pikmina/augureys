@@ -1,7 +1,7 @@
 :root, *, *::before, *::after {
   /*Acentos*/
-  --accent1: #7a3232;
-  --accent2: #662424;
+  --accent1: #76a6bd;
+  --accent2: #607D8B;
   --links1:#aaa;
   --links2:#ddd;
   /*Fondos transparentes*/
@@ -10,27 +10,27 @@
   --tbckg0:rgba(10,10,10,0.75);
   --tbckg1:rgba(15,15,15,0.5);
   /*Fondos opacos*/
-  --body:#555;
+  --body: #414141;
   --header:#555;
   --scroll-bckg:var(--deco);
   --scroll-thumb:color-mix(in srgb, var(--accent2) 70%, transparent);
   --scroll-track:var(--border1-c);
-  --cuerpo:#08080880;
+  --cuerpo: #08080880;
   --dbckg0:#080808bf;
   --dbckg1:#0a0a0abf;
   --dbckg2:#0c0c0cbf;
   --dbckg3:#0e0e0ebf;
   --dbckg4:#101010bf;
   --dbckg5:#121212bf;
-  --deco:#080808;
+  --deco: #000000;
   --nav:#0a0a0a;
   /*Bordes*/
   --border0:1px solid var(--border0-c);
   --border1:1px solid var(--border1-c);
   --border2:1px solid var(--border2-c);
   --border0-c:#161616;
-  --border1-c:#181818;
-  --border2-c:#222;
+  --border1-c: #6e6e6e;
+  --border2-c: #253b46;
   /*Tamaño de fuentes*/
   --fs-logo1:15rem;
   --fs-logo2:.9rem;
@@ -55,7 +55,7 @@
   --f-mono2:'IBM Plex Serif', serif;
   --f-deco:'Lordish', serif;
   /*Colores de fuente*/
-  --text:#888;
+  --text: #d2d2d2;
   --text2:#666;
   --text3:#444;
   --subtitle:#ccc;
