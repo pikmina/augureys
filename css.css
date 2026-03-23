@@ -121,7 +121,7 @@
   --inactivos: #555555;
   --usuarios: #777777;
   /*Separador firma*/
-  --sigsep-1:'VIOLENT ENDS';
+  --sigsep-1:'AUGUREYS SONG';
   --sigsep-2:'These things are true. The world is dark.';
 }
 
@@ -176,8 +176,8 @@ html.light, html.light *, html.light *::before, html.light *::after {
   --gm-effect2:color;
   --gm-filter:brightness(0.8) contrast(0.7);
   /*Personalización*/
-  --body-img:url(https://2img.net/i.imgur.com/wYU09C7.png);
-  --header-img:url(https://2img.net/i.imgur.com/fkPEHXU.png);
+  --body-img:url(https://i.ibb.co/Hpz4Brb/bg.jpg);
+  --header-img:url(https://i.ibb.co/Hpz4Brb/bg.jpg);
   --body-effect:screen;
   --header-effect:screen;
   --deco-border-bckg1:var(--border2-c);
