@@ -32,7 +32,7 @@
   --border1-c: #6e6e6e;
   --border2-c: #253b46;
   /*Tamaño de fuentes*/
-  --fs-logo1:15rem;
+  --fs-logo1: 10rem;
   --fs-logo2:.9rem;
   --fs-logo3:.65rem;
   --fs-h0:11rem;
@@ -711,6 +711,7 @@ header a {
 header a>b {
   font:var(--fs-logo1) var(--f-deco);
   line-height:var(--fs-logo1);
+  text-transform: capitalize;
   color:transparent;
   text-shadow:5px 5px var(--accent2);
   -webkit-text-stroke:1.25px var(--title);
