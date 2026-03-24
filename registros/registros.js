@@ -152,7 +152,8 @@ const RegistrosApp = (() => {
           r["Tipo de Sangre"],
           r["Raza"],
           r["Empleo Área"],
-          r["Empleo Puesto"]
+          r["Empleo Puesto"], 
+          r["Curso"]
         ]
           .join(" ")
           .toLowerCase();
@@ -200,7 +201,8 @@ const RegistrosApp = (() => {
         "Sexo",
         "PB",
         "Empleo Área",
-        "Empleo Puesto"
+        "Empleo Puesto",
+        "Curso"
       ];
 
       datos.forEach(r => {
@@ -216,6 +218,7 @@ const RegistrosApp = (() => {
         <td>${r["PB"] || ""}</td>
         <td>${r["Empleo Área"] || ""}</td>
         <td>${r["Empleo Puesto"] || ""}</td>
+        <td>${r["Curso"] || ""}</td>
       </tr>
     `;
       });
@@ -249,12 +252,13 @@ const RegistrosApp = (() => {
     }
 
     if (pestañaActiva === "rango") {
-      headers = ["Institución", "Puesto", "Nombre"];
+      headers = ["Institución", "Puesto", "Curso", "Nombre"];
       datos.forEach(r => {
         filas += `
           <tr>
             <td>${r["Empleo Área"] || ""}</td>
             <td>${r["Empleo Puesto"] || ""}</td>
+            <td>${r["Curso"] || ""}</td>
             <td>${r["Apellido"] || ""} ${r["Nombre"] || ""}</td>           
           </tr>
         `;
