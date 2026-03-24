@@ -1025,7 +1025,7 @@ menu li a:hover {
   grid-template-areas:
     'staff ambi nov last'
     'staff ambi tramas last'
-    'staff links links links';
+    'staff ambi tramas last';
 }
 
 .tbtext {

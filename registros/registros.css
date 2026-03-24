@@ -73,6 +73,10 @@ body#registros-page {
 .col-filters {
   max-width: 260px;
 }
+.col-registros h2 {
+    font-family: var(--f-deco);
+    border-bottom: var(--border2);
+}
 
 /* =========================================
    FILTROS
