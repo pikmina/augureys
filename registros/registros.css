@@ -44,18 +44,21 @@ body {
    CONTAINER
 ========================================= */
 .container-rec {
-  width: var(--container-width);
   margin: auto;
-  background: var(--color-bg-container);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-sm);
+  background: var(--dbckg5);
+  padding: 50px 40px;
+  border: var(--border2);
+  border-radius: 20px;
+  corner-shape: scoop;
+  font-size: var(--fs-body);
+  font-family: var(--f-body);
 }
 
 /* =========================================
    FILTROS
 ========================================= */
 #filtros {
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
 }
@@ -86,10 +89,12 @@ body {
 
 /* Buscador */
 #busqueda-texto {
-  border: 1px solid var(--color-border);
-  padding: var(--spacing-sm) var(--spacing-md);
-  width: 100%;
-  border-radius: var(--radius-sm);
+  border: var(--border0);
+  padding: var(
+  --spacing-sm) var(--spacing-md);
+  width: 30%;
+  border-radius: var(
+  --radius-sm);
   box-sizing: border-box;
 }
 
@@ -103,13 +108,18 @@ body {
 .tab-btn {
   padding: var(--spacing-md);
   border: none;
-  background: var(--color-primary);
+  background: var(--dbckg2);
   color: var(--color-white);
-  font-weight: bold;
-  border-radius: var(--radius-sm);
-  min-width: 80px;
+  
+  -
+  width: 80px;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  font-family: var(--f-mono2);
+  text-transform: uppercase;
+  border: var(--border0);
+  font-size: var(--fs-smaller);
+  width: 140px;
 }
 
 .tab-btn:hover {
@@ -118,6 +128,7 @@ body {
 
 .tab-btn.active {
   box-shadow: 0 0 0 2px rgba(0,0,0,0.15) inset;
+  border: var(--border2);
 }
 
 /* =========================================
@@ -131,9 +142,13 @@ body {
 }
 
 #tabla-registros th {
-  background: var(--color-primary);
+  background: var(--dbckg0);
   color: var(--color-white);
   cursor: pointer;
+  font-family: var(--f-mono2);
+  font-size: var(--fs-smaller);
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 #tabla-registros th,
