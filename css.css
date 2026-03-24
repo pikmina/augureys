@@ -192,11 +192,6 @@ html.light, html.light *, html.light *::before, html.light *::after {
   font-display: swap;
 }
 
-/* Ejemplo de uso */
-body {
-  font-family: 'MagicRetro', sans-serif;
-}
-
 html, body {
   margin:0;
   padding:0;
