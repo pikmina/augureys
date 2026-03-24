@@ -6,7 +6,7 @@ const RegistrosApp = (() => {
   let filtrosActivos = {};
   let columnaOrden = null;
   let ascendente = true;
-  let pestañaActiva = "Todos";
+  let pestañaActiva = "apellidos";
   let busquedaTexto = "";
 
   /* ================================
@@ -14,7 +14,7 @@ const RegistrosApp = (() => {
   ================================= */
   function init() {
 
-    if (!document.getElementById("tabla-registros")) return;
+    if (!document.getElementById("lista-registros")) return;
 
     activarTabs();
     activarFiltros();
@@ -30,7 +30,7 @@ const RegistrosApp = (() => {
   }
 
   /* ================================
-     TABS (USA LAS DEL HTML)
+     TABS
   ================================= */
   function activarTabs() {
 
@@ -152,7 +152,7 @@ const RegistrosApp = (() => {
           r["Tipo de Sangre"],
           r["Raza"],
           r["Empleo Área"],
-          r["Empleo Puesto"], 
+          r["Empleo Puesto"],
           r["Curso"]
         ]
           .join(" ")
@@ -168,7 +168,7 @@ const RegistrosApp = (() => {
   }
 
   /* ================================
-     RENDER TABLA
+     RENDER TEXTO HTML
   ================================= */
   function renderTabla() {
 
@@ -182,108 +182,141 @@ const RegistrosApp = (() => {
       });
     }
 
-    const theadRow = document.querySelector("#tabla-registros thead tr");
-    const tbody = document.querySelector("#tabla-registros tbody");
+const contenedor = document.getElementById("lista-registros");
+if (!contenedor) return;
 
-    if (!theadRow || !tbody) return;
+contenedor.innerHTML = ""; // ← fuerza reinicio DOM
 
-    let headers = [];
-    let filas = "";
+let salida = "";
 
-    if (pestañaActiva === "Todos") {
-      headers = [
-        "Nombre",
-        "Apellido",
-        "Grupo",
-        "Condición",
-        "Tipo de Sangre",
-        "Raza",
-        "Sexo",
-        "PB",
-        "Empleo Área",
-        "Empleo Puesto",
-        "Curso"
-      ];
+    if (pestañaActiva === "apellidos") {
+
+      const grupos = {};
 
       datos.forEach(r => {
-        filas += `
-      <tr>
-        <td>${r["Nombre"] || ""}</td>
-        <td>${r["Apellido"] || ""}</td>
-        <td>${r["Grupo"] || ""}</td>
-        <td>${r["Condición"] || ""}</td>
-        <td>${r["Tipo de Sangre"] || ""}</td>
-        <td>${r["Raza"] || ""}</td>
-        <td>${r["Sexo"] || ""}</td>
-        <td>${r["PB"] || ""}</td>
-        <td>${r["Empleo Área"] || ""}</td>
-        <td>${r["Empleo Puesto"] || ""}</td>
-        <td>${r["Curso"] || ""}</td>
-      </tr>
-    `;
+        const apellido = r["Apellido"] || "Sin apellido";
+        if (!grupos[apellido]) grupos[apellido] = [];
+        grupos[apellido].push(r);
+      });
+
+      const apellidosOrdenados = Object.keys(grupos)
+        .sort((a, b) => a.localeCompare(b, 'es'));
+
+      apellidosOrdenados.forEach(apellido => {
+
+        salida += `
+<personaje>
+<pjg>${apellido}</pjg>
+`;
+        grupos[apellido]
+          .sort((a, b) => (a["Nombre"] || "").localeCompare(b["Nombre"] || "", 'es'))
+          .forEach(r => {
+            salida += `
+<b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b> &bull; ${r["Grupo"] || ""} &bull; ${r["Tipo de Sangre"] || ""}<br/>
+`;
+          });
+
+        salida += `
+</personaje>
+`;
       });
     }
 
-    if (pestañaActiva === "personaje") {
-      headers = ["Nombre", "Condición", "Tipo de Sangre", "Raza", "PB"];
-      datos.forEach(r => {
-        filas += `
-          <tr>
-            <td>${r["Apellido"] || ""} ${r["Nombre"] || ""}</td>
-            <td>${r["Condición"] || ""}</td>
-            <td>${r["Tipo de Sangre"] || ""}</td>
-            <td>${r["Raza"] || ""}</td>
-            <td>${r["PB"] || ""}</td>
-          </tr>
-        `;
-      });
-    }
 
-    if (pestañaActiva === "pb") {
-      headers = ["Nombre", "PB"];
-      datos.forEach(r => {
-        filas += `
-          <tr>
-            <td>${r["Apellido"] || ""} ${r["Nombre"] || ""}</td>
-            <td>${r["PB"] || ""}</td>
-          </tr>
-        `;
+if (pestañaActiva === "pb") {
+
+  const grupos = {};
+
+  datos.forEach(r => {
+    const sexo = r["Sexo"] || "Sin especificar";
+    if (!grupos[sexo]) grupos[sexo] = [];
+    grupos[sexo].push(r);
+  });
+
+  const sexosOrdenados = Object.keys(grupos)
+    .sort((a,b)=> a.localeCompare(b,'es'));
+
+  sexosOrdenados.forEach(sexo => {
+
+    salida += `
+<personaje>
+<pjg>${sexo}</pjg><br>
+`;
+
+    grupos[sexo]
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+&nbsp;&nbsp;• <em>${r["PB"] || ""}</em> es <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br>
+`;
       });
-    }
+
+    salida += `
+</personaje><br>
+`;
+  });
+}
 
     if (pestañaActiva === "rango") {
-      headers = ["Institución", "Puesto", "Curso", "Nombre"];
-      datos.forEach(r => {
-        filas += `
-          <tr>
-            <td>${r["Empleo Área"] || ""}</td>
-            <td>${r["Empleo Puesto"] || ""}</td>
-            <td>${r["Curso"] || ""}</td>
-            <td>${r["Apellido"] || ""} ${r["Nombre"] || ""}</td>           
-          </tr>
-        `;
+  const grupos = {};
+
+  datos.forEach(r => {
+    const empleo = r["Empleo Área"] || "Sin especificar";
+    if (!grupos[empleo]) grupos[empleo] = [];
+    grupos[empleo].push(r);
+  });
+
+  const empleosOrdenados = Object.keys(grupos)
+    .sort((a,b)=> a.localeCompare(b,'es'));
+
+  empleosOrdenados.forEach(empleo => {
+
+    salida += `
+<personaje>
+<pjg>${empleo}</pjg><br>
+`;
+
+    grupos[empleo ]
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+<b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b> es <em>${r["Empleo Puesto"] || ""}</em><br>
+`;
       });
+
+    salida += `
+</personaje><br>
+`;
+  });
     }
 
     if (pestañaActiva === "sangre") {
-      headers = ["Nombre", "Tipo de Sangre", "Condición", "Raza"];
       datos.forEach(r => {
-        filas += `
-          <tr>
-            <td>${r["Apellido"] || ""} ${r["Nombre"] || ""}</td>
-            <td>${r["Tipo de Sangre"] || ""}</td>
-            <td>${r["Condición"] || ""}</td>
-            <td>${r["Raza"] || ""}</td>
-          </tr>
-        `;
+        salida += `
+<personaje>
+<b>Nombre:</b> ${r["Apellido"] || ""} ${r["Nombre"] || ""}<br>
+<b>Tipo de Sangre:</b> ${r["Tipo de Sangre"] || ""}<br>
+<b>Condición:</b> ${r["Condición"] || ""}<br>
+<b>Raza:</b> ${r["Raza"] || ""}
+</personaje><br><br>
+`;
       });
     }
 
-    theadRow.innerHTML = headers.map(h =>
-      `<th onclick="RegistrosApp.ordenar('${h}')">${h}</th>`
-    ).join("");
+        if (pestañaActiva === "personaje") {
+      datos.forEach(r => {
+        salida += `
+<personaje>
+<b>Nombre:</b> ${r["Apellido"] || ""} ${r["Nombre"] || ""}<br>
+<b>Tipo de Sangre:</b> ${r["Tipo de Sangre"] || ""}<br>
+<b>Condición:</b> ${r["Condición"] || ""}<br>
+<b>Raza:</b> ${r["Raza"] || ""}
+</personaje><br><br>
+`;
+      });
+    }
 
-    tbody.innerHTML = filas;
+    contenedor.innerHTML = salida;
   }
 
   /* ================================
