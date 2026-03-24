@@ -757,14 +757,16 @@ header a {
 
 header.flex-col::before {
     content: '';
-    background-image: url(https://pikmina.github.io/augureys/feather.svg);
-    display: block;
-    height: 600px;
-    width: 600px;
     position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
     top: 29px;
+
+    width: 600px;
+    height: 600px;
+
+    background-color: var(--text);
+
+    -webkit-mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
+            mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
 }
 
 header a>b {
