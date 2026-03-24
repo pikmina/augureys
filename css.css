@@ -1015,8 +1015,10 @@ menu li a:hover {
   margin-bottom: 20px;
   overflow: hidden;
   align-items: stretch;
+  corner-shape: scoop;
+  border-radius: 20px;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 30px;
   gap: 1px;
   display: grid;
   grid-template-columns: 100px .9fr .9fr 1.3fr;
@@ -2731,20 +2733,3 @@ p.pagination {
   width: 60% !important;
   padding: var(--fs-h5);
 }
-
-.feather{
-    position: absolute;   /* o relative según tu layout */
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 600px;
-    height: 600px;
-
-    background-color: var(--text2);  /* color de la pluma */
-
-    -webkit-mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
-            mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
-
-    pointer-events: none;
-}   
