@@ -755,20 +755,19 @@ header a {
   text-shadow: var(--shadow-l);
 }
 
-header.flex-col::before {
-    content: '';
-    position: absolute;
-    top: 29px;
 
+.feather{
+    position: absolute;   /* o relative según tu layout */
+    top: 29px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 600px;
     height: 600px;
-
-    background-color: var(--text);
-
+    background-color: var(--text2);  /* color de la pluma */
     -webkit-mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
             mask: url("https://pikmina.github.io/augureys/feather.svg") no-repeat center / contain;
+    pointer-events: none;
 }
-
 header a>b {
   font: var(--fs-logo1) var(--f-deco);
   line-height: var(--fs-logo1);
