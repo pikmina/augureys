@@ -398,14 +398,23 @@ if (pestañaActiva === "hogwarts") {
 
   const casasOrden = ["Gryffindor","Ravenclaw","Hufflepuff","Slytherin"];
   const grupos = {};
+  const staff = [];
 
-  // Filtrar y agrupar por Casa → Curso
+  // Filtrar y clasificar
   datos.forEach(r => {
     const area = (r["Empleo Área"] || "").trim().toLowerCase();
     if (area !== "hogwarts") return;
 
+    const curso = (r["Curso"] || "").trim();
+
+    // Personal (sin curso)
+    if (!curso) {
+      staff.push(r);
+      return;
+    }
+
+    // Estudiantes
     const casa = r["Grupo"] || "Sin grupo";
-    const curso = r["Curso"] || "Sin curso";
 
     if (!grupos[casa]) grupos[casa] = {};
     if (!grupos[casa][curso]) grupos[casa][curso] = [];
@@ -413,6 +422,35 @@ if (pestañaActiva === "hogwarts") {
     grupos[casa][curso].push(r);
   });
 
+  // ================================
+  // PERSONAL DE HOGWARTS (ARRIBA)
+  // ================================
+  if (staff.length) {
+
+    salida += `
+<personaje>
+<casa style="font-weight:bold; color:#555;">
+Personal de Hogwarts
+</casa><br>
+`;
+
+    staff
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+&nbsp;&nbsp;• <b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b>
+&mdash; <em>${r["Empleo Puesto"] || ""}</em><br>
+`;
+      });
+
+    salida += `
+</personaje><br>
+`;
+  }
+
+  // ================================
+  // CASAS → CURSOS → PERSONAJES
+  // ================================
   casasOrden.forEach(casa => {
 
     if (!grupos[casa]) return;
@@ -433,7 +471,6 @@ ${casa}
 </casa>
 `;
 
-    // Ordenar cursos numéricamente cuando sea posible
     const cursosOrdenados = Object.keys(grupos[casa]).sort((a,b)=>{
       const na = parseInt(a);
       const nb = parseInt(b);
@@ -452,7 +489,7 @@ ${casa}
         .forEach(r => {
           salida += `
 &nbsp;&nbsp;&nbsp;&nbsp;• <b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b>
-&nbsp;<span>Puesto: ${r["Empleo Puesto"] || ""}</span><br>
+&mdash; ${r["Empleo Puesto"] || ""}</span><br>
 `;
         });
 
