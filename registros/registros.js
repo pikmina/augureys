@@ -212,7 +212,7 @@ let salida = "";
           .sort((a, b) => (a["Nombre"] || "").localeCompare(b["Nombre"] || "", 'es'))
           .forEach(r => {
             salida += `
-<b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b> &bull; ${r["Grupo"] || ""} &bull; ${r["Tipo de Sangre"] || ""}<br/>
+&mdash; <b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b> &bull; ${r["Grupo"] || ""} &bull; ${r["Tipo de Sangre"] || ""}<br/>
 `;
           });
 
@@ -240,14 +240,14 @@ if (pestañaActiva === "pb") {
 
     salida += `
 <personaje>
-<pjg>${sexo}</pjg><br>
+<pjg>${sexo}</pjg>
 `;
 
     grupos[sexo]
       .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
       .forEach(r => {
         salida += `
-&nbsp;&nbsp;• <em>${r["PB"] || ""}</em> es <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br>
+&mdash; <em>${r["PB"] || ""}</em> es <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br>
 `;
       });
 
@@ -273,14 +273,14 @@ if (pestañaActiva === "pb") {
 
     salida += `
 <personaje>
-<pjg>${empleo}</pjg><br>
+<pjg>${empleo}</pjg>
 `;
 
     grupos[empleo ]
       .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
       .forEach(r => {
         salida += `
-<b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b> es <em>${r["Empleo Puesto"] || ""}</em><br>
+&mdash; <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b> es <em>${r["Empleo Puesto"] || ""}</em><br>
 `;
       });
 
@@ -290,31 +290,180 @@ if (pestañaActiva === "pb") {
   });
     }
 
-    if (pestañaActiva === "sangre") {
-      datos.forEach(r => {
-        salida += `
-<personaje>
-<b>Nombre:</b> ${r["Apellido"] || ""} ${r["Nombre"] || ""}<br>
-<b>Tipo de Sangre:</b> ${r["Tipo de Sangre"] || ""}<br>
-<b>Condición:</b> ${r["Condición"] || ""}<br>
-<b>Raza:</b> ${r["Raza"] || ""}
-</personaje><br><br>
-`;
-      });
-    }
+if (pestañaActiva === "sangre") {
 
-        if (pestañaActiva === "personaje") {
-      datos.forEach(r => {
-        salida += `
+  const grupos = {};
+
+  datos.forEach(r => {
+    const sangre = r["Tipo de Sangre"] || "Sin especificar";
+    if (!grupos[sangre]) grupos[sangre] = [];
+    grupos[sangre].push(r);
+  });
+
+  const sangresOrdenadas = Object.keys(grupos)
+    .sort((a,b)=> a.localeCompare(b,'es'));
+
+  sangresOrdenadas.forEach(sangre => {
+
+    salida += `
 <personaje>
-<b>Nombre:</b> ${r["Apellido"] || ""} ${r["Nombre"] || ""}<br>
-<b>Tipo de Sangre:</b> ${r["Tipo de Sangre"] || ""}<br>
-<b>Condición:</b> ${r["Condición"] || ""}<br>
-<b>Raza:</b> ${r["Raza"] || ""}
-</personaje><br><br>
+<pjg>${sangre}</pjg>
+`;
+
+    grupos[sangre]
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+&mdash; <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br/>
 `;
       });
-    }
+
+    salida += `
+</personaje><br>
+`;
+  });
+}
+
+if (pestañaActiva === "hibridos") {
+
+  const grupos = {};
+
+  datos.forEach(r => {
+    const raza = r["Raza"] || "Sin especificar";
+    if (!grupos[raza]) grupos[raza] = [];
+    grupos[raza].push(r);
+  });
+
+  const razasOrdenadas = Object.keys(grupos)
+    .sort((a,b)=> a.localeCompare(b,'es'));
+
+  razasOrdenadas.forEach(raza => {
+
+    salida += `
+<personaje>
+<pjg>${raza}</pjg>
+`;
+
+    grupos[raza]
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+&mdash; <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br>
+`;
+      });
+
+    salida += `
+</personaje><br>
+`;
+  });
+}
+
+if (pestañaActiva === "condiciones") {
+
+  const grupos = {};
+
+  datos.forEach(r => {
+    const condicion = (r["Condición"] || "").trim();
+    if (!condicion) return; // ← ignorar vacíos
+
+    if (!grupos[condicion]) grupos[condicion] = [];
+    grupos[condicion].push(r);
+  });
+
+  const condicionesOrdenadas = Object.keys(grupos)
+    .sort((a,b)=> a.localeCompare(b,'es'));
+
+  condicionesOrdenadas.forEach(condicion => {
+
+    salida += `
+<personaje>
+<pjg>${condicion}</pjg>
+`;
+
+    grupos[condicion]
+      .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+      .forEach(r => {
+        salida += `
+&mdash; <b>${r["Apellido"] || ""} ${r["Nombre"] || ""}</b><br>
+`;
+      });
+
+    salida += `
+</personaje><br>
+`;
+  });
+}
+
+if (pestañaActiva === "hogwarts") {
+
+  const casasOrden = ["Gryffindor","Ravenclaw","Hufflepuff","Slytherin"];
+  const grupos = {};
+
+  // Filtrar y agrupar por Casa → Curso
+  datos.forEach(r => {
+    const area = (r["Empleo Área"] || "").trim().toLowerCase();
+    if (area !== "hogwarts") return;
+
+    const casa = r["Grupo"] || "Sin grupo";
+    const curso = r["Curso"] || "Sin curso";
+
+    if (!grupos[casa]) grupos[casa] = {};
+    if (!grupos[casa][curso]) grupos[casa][curso] = [];
+
+    grupos[casa][curso].push(r);
+  });
+
+  casasOrden.forEach(casa => {
+
+    if (!grupos[casa]) return;
+
+    salida += `
+<personaje>
+<casa style="
+  font-weight:bold;
+  color:${
+    casa==="Gryffindor" ? "#7F0909" :
+    casa==="Slytherin"  ? "#0D6217" :
+    casa==="Ravenclaw"  ? "#0E1A40" :
+    casa==="Hufflepuff" ? "#ECB939" :
+    "#444"
+  };
+">
+${casa}
+</casa>
+`;
+
+    // Ordenar cursos numéricamente cuando sea posible
+    const cursosOrdenados = Object.keys(grupos[casa]).sort((a,b)=>{
+      const na = parseInt(a);
+      const nb = parseInt(b);
+      if (!isNaN(na) && !isNaN(nb)) return na - nb;
+      return a.localeCompare(b,'es');
+    });
+
+    cursosOrdenados.forEach(curso => {
+
+      salida += `
+&nbsp;&nbsp;<curso>${curso}</curso><br>
+`;
+
+      grupos[casa][curso]
+        .sort((a,b)=> (a["Apellido"]||"").localeCompare(b["Apellido"]||"", 'es'))
+        .forEach(r => {
+          salida += `
+&nbsp;&nbsp;&nbsp;&nbsp;• <b>${r["Nombre"] || ""} ${r["Apellido"] || ""}</b>
+&nbsp;<span>Puesto: ${r["Empleo Puesto"] || ""}</span><br>
+`;
+        });
+
+      salida += `<br>`;
+    });
+
+    salida += `
+</personaje><br>
+`;
+  });
+}
 
     contenedor.innerHTML = salida;
   }

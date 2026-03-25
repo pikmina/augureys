@@ -133,18 +133,16 @@ body#registros-page {
 }
 
 .tab-btn {
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   background: var(--dbckg2);
   color: var(--color-white);
-
-  -
   width: 80px;
   cursor: pointer;
   transition: opacity 0.2s ease;
   font-family: var(--f-mono2);
   text-transform: uppercase;
   border: var(--border0);
-  font-size: var(--fs-smaller);
+  font-size: var(--fs-mini);
   flex: auto;
   margin: 0 5px;
 }
@@ -169,7 +167,7 @@ personaje {
     text-align: center;
 }
 
-pjg {
+pjg, casa {
     display: block;
     text-transform: uppercase;
     font-weight: bold;
