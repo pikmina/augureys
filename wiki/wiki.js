@@ -1,10 +1,8 @@
-// ===============================
-// CONFIG
-// ===============================
-// Añadimos per_page=100 para evitar el límite por defecto de WordPress (10 posts)
-const API_CATEGORIES = "https://saxagenia.com/wp-json/wp/v2/doc_category?per_page=100";
-const API_DOCS = "https://saxagenia.com/wp-json/wp/v2/docs?per_page=100";
-const API_DOC = id => `https://saxagenia.com/wp-json/wp/v2/docs/${id}`;
+const API_BASE = "https://as.saxagenia.com/wp-json/wp/v2";
+
+const API_CATEGORIES = `${API_BASE}/doc_category?per_page=100`;
+const API_DOCS = `${API_BASE}/docs?per_page=100`;
+const API_DOC = id => `${API_BASE}/docs/${id}`;
 
 let ALL_DOCS = [];
 let ALL_CATEGORIES = [];

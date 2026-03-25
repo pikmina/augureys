@@ -1,3 +1,21 @@
+body#wiki-page {
+  font-family: 'IBM Plex Sans', Verdana, Helvetica, Sans-serif;
+  background-color: #000;
+  font-size: 14px;
+  height: auto;
+  padding: 10px 0;
+  width: 1200px;
+  margin: 20px;
+  background-color: var(--body);
+  background-image: var(--body-img);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: var(--body-effect);
+}
+
+
 /* Layout */
 #wiki-wrapper {
     display: flex;
@@ -5,8 +23,9 @@
     width: 80%;
     font-family: Verdana;
     margin: auto;
-    border: 1px solid lightgray;
+    border: var(--border2);
     padding: 30px;
+    color: var(--text);
 }
 
 div#wiki-content {
@@ -37,13 +56,13 @@ li.wiki-doc, li.wiki-doc-empty {
 .wiki-card {
     padding: 12px;
     margin-bottom: 12px;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    background: #fafafa;
     cursor: pointer;
+    color: var(--text);
+    border: var(--border0) !important;
 }
 .wiki-card:hover {
-    background: #f0f0f0;
+    background: var(--dbckg5);
 }
 .wiki-card-title {
     font-size: 18px;
@@ -64,7 +83,6 @@ li.wiki-doc, li.wiki-doc-empty {
 
 /* ToC */
 .toc {
-    background: #f2f2f2;
     padding: 10px;
     border-radius: 6px;
     margin-bottom: 15px;
@@ -85,6 +103,9 @@ li.wiki-doc, li.wiki-doc-empty {
 
 input#wiki-search {
     width: 100%;
+    background: var(--cuerpo);
+    padding: 15px;
+    border: var(--border0);
 }
 
 /* Animación de entrada */
