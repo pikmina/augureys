@@ -464,7 +464,7 @@ Personal de Hogwarts
     casa==="Slytherin"  ? "#0D6217" :
     casa==="Ravenclaw"  ? "#0E1A40" :
     casa==="Hufflepuff" ? "#ECB939" :
-    "#444"
+    "#b5b5b5"
   };
 ">
 ${casa}
@@ -481,7 +481,7 @@ ${casa}
     cursosOrdenados.forEach(curso => {
 
       salida += `
-&nbsp;&nbsp;<curso>${curso}</curso><br>
+&nbsp;&nbsp;<b>${curso}</b><br>
 `;
 
       grupos[casa][curso]
