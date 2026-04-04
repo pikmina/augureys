@@ -48,7 +48,7 @@ function renderSidebar(categories) {
     let html = `
     <h3>
         <a href="?" id="wiki-home" style="text-decoration:none; cursor:pointer;">
-            Wiki
+            Codex
         </a>
     </h3>
     <ul class='wiki-tree'>
@@ -86,7 +86,7 @@ function renderSidebar(categories) {
 
         html += `
         <li class="wiki-cat" data-cat="${cat.id}">
-            <div class="wiki-cat-title" style="cursor:pointer; font-weight:bold;">
+            <div class="wiki-cat-title">
                 ${cat.name}
             </div>
             <ul class="wiki-sublist">
@@ -162,7 +162,7 @@ function renderDocs(list) {
     const listBox = document.getElementById("wiki-list");
     const articleBox = document.getElementById("wiki-article");
 
-    listBox.style.display = "block";
+    listBox.style.display = "";
     articleBox.style.display = "none";
     listBox.classList.remove("wiki-animate");
 
@@ -184,25 +184,11 @@ function renderDocs(list) {
         sortedCategories.forEach(cat => {
 
             htmlContent += `
-                <div class="wiki-category-card" data-cat="${cat.id}" style="
-                    cursor:pointer;
-                    border:1px solid #ccc;
-                    border-radius:10px;
-                    padding:15px;
-                    margin:10px;
-                    display:flex;
-                    gap:15px;
-                    align-items:center;
-                ">
-                    <div class="wiki-category-img">
-                        <img src="${cat.thumbnail || ''}" 
-                             style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
-                    </div>
-
+                <div class="wiki-category-card" data-cat="${cat.id}">
                     <div class="wiki-category-info">
-                        <div style="font-weight:bold; font-size:1.1em;">
+                        
                             ${cat.name}
-                        </div>
+                        
                     </div>
                 </div>
             `;
@@ -224,12 +210,7 @@ function renderDocs(list) {
             const cat = ALL_CATEGORIES.find(c => c.id === catId);
 
             htmlContent += `
-                <div class="wiki-card" data-id="${doc.id}" style="
-                    cursor:pointer;
-                    border:1px solid #ccc;
-                    margin:5px;
-                    padding:10px;
-                ">
+                <div class="wiki-card" data-id="${doc.id}">
                     <div><strong>${doc.title.rendered}</strong></div>
                     <div><small>${cat?.name ?? "General"}</small></div>
                 </div>

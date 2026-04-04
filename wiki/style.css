@@ -19,24 +19,35 @@ body#wiki-page {
 /* Layout */
 #wiki-wrapper {
     display: flex;
-    gap: 20px;
-    width: 80%;
-    font-family: Verdana;
+    gap: 5px;
     margin: auto;
     border: var(--border2);
     padding: 30px;
     color: var(--text);
+    corner-shape: scoop;
+    border-radius: 15px;
 }
 
 div#wiki-content {
     width: 75%;
+    background: var(--dbckg0);
+    padding: 10px;
 }
 
 /* Sidebar */
 #wiki-sidebar {
     width: 25%;
-    border-right: 2px solid #ccc;
-    padding-right: 10px;
+    background: var(--dbckg0);
+    padding: 15px;
+}
+div#wiki-sidebar h3 a {
+    font-family: var(--f-deco);
+    font-size: var(--fs-h4);
+    color: var(--accent2);
+}
+
+ul.wiki-tree {
+    list-style: lower-roman;
 }
 .wiki-tree li {
     cursor: pointer;
@@ -44,12 +55,19 @@ div#wiki-content {
 }
 
 .wiki-cat-title {
-    font-weight: bold;
     font-size: 110%;
+    font-family: var(--f-mono2);
+    text-transform: uppercase;
+    font-weight: normal;
 }
-
+ul.wiki-sublist {
+    margin-left: -15px;
+}
 li.wiki-doc, li.wiki-doc-empty {
-    margin-left: 10px;
+    margin-left: 0;
+    list-style: lower-roman;
+    font-family: var(--f-mono2);
+    color: var(--text);
 }
 
 /* Cards */
@@ -124,11 +142,21 @@ input#wiki-search {
 .wiki-animate {
     animation: wikiFadeIn 0.4s ease-out forwards;
 }
+.wiki-intro {
+    padding: 20px 30px;
+}
 
+.wiki-intro h2 {
+    font-family: var(--f-deco);
+    font-size: var(--fs-h4);
+    text-shadow: var(--shadow-b2);
+    color: var(--accent2);
+}
 /* Suavizar la transición de altura del contenedor principal */
 #wiki-article, #wiki-list {
     transition: opacity 0.3s ease;
     will-change: opacity, transform;
+    display: grid;
 }
 
 /* Efecto hover suave para las tarjetas y enlaces */
@@ -139,4 +167,19 @@ input#wiki-search {
 .wiki-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.wiki-home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+.wiki-category-card {
+    padding: 20px 10px;
+    text-align: center;
+    font-family: var(--f-titles);
+    text-transform: uppercase;
+    font-size: var(--fs-h6);
+    margin: 12px 0px 0px;
+    border: var(--border0);
 }
