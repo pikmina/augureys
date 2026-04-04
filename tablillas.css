@@ -327,7 +327,7 @@ outline:var(--border2);
 & > b {
 display:block;
 font:700 var(--fs-smaller) var(--f-mono2);
-text-transform:lowercase;
+text-transform:none;
 line-height:1em;
 }
 & > i {
@@ -381,7 +381,7 @@ padding:clamp(3rem, 10%, 5rem);
 font:4rem var(--f-deco);
 line-height:1em;
 text-align:center;
-text-transform:lowercase;
+text-transform:none;
 display:block;
 color:var(--group-25);
 -webkit-text-stroke:clamp(.25px, .1em, .5px) var(--group);
@@ -457,7 +457,7 @@ color:var(--group-25);
 -webkit-text-stroke:clamp(.25px, .1em, .5px) var(--group);
 font:3.75rem var(--f-deco);
 line-height:1em;
-text-transform:lowercase;
+text-transform:none;
 }
 & i {
 color:var(--text2);
@@ -519,7 +519,7 @@ align-items:center;
 margin-bottom:1px;
 & b {
 font:var(--fs-h2) var(--f-deco);
-text-transform:lowercase;
+text-transform:none;
 line-height:1em;
 color:var(--group-25);
 -webkit-text-stroke:clamp(.25px, .1em, .5px) var(--group);
@@ -647,7 +647,7 @@ flex-direction:column;
 padding:1.5rem 2rem;
 & b {
 font:700 var(--fs-small) var(--f-mono2);
-text-transform:lowercase;
+text-transform:none;
 line-height:1em;
 }
 & i {
@@ -1093,7 +1093,7 @@ font:var(--fs-h2) var(--f-deco);
 color:var(--group-25);
 -webkit-text-stroke:clamp(.25px, .1em, .5px) var(--group);
 line-height:1em;
-text-transform:lowercase;
+text-transform:none;
 }
 & i {
 font:700 var(--fs-deco) var(--f-mono);
@@ -1139,7 +1139,7 @@ backdrop-filter:var(--ft-blur);
 & i {
 font:700 var(--fs-smaller) var(--f-mono2);
 line-height:1em;
-text-transform:lowercase;
+text-transform:none;
 }
 & b {
 font:700 var(--fs-deco) var(--f-mono);

@@ -549,7 +549,7 @@ deco[data-type="left"] h i {
 deco[data-type="left"] h b {
   font: var(--fs-h3) var(--f-deco);
   line-height: var(--fs-h3);
-  text-transform: lowercase;
+  text-transform: none;
   color: var(--groupbody);
   margin-top: calc(var(--fs-h3) * -.25);
 }
@@ -630,7 +630,7 @@ deco[data-type="left"] h b {
   gap: 5px;
   font: 700 italic var(--fs-tiny) var(--f-mono2);
   color: var(--title);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .lf-links a:before {
@@ -771,7 +771,7 @@ header a {
 header a>b {
   font: var(--fs-logo1) var(--f-deco);
   line-height: var(--fs-logo1);
-  text-transform: capitalize;
+  text-transform: none;
   color: transparent;
   text-shadow: 4px 0px var(--accent2);
   -webkit-text-stroke: 1.25px var(--title);
@@ -1137,14 +1137,14 @@ menu li a:hover {
   font: var(--fs-h6) var(--f-titles);
   line-height: var(--fs-h6);
   color: var(--subtitle);
-  text-transform: lowercase;
+  text-transform: Normal;
 }
 
 .tbhead span i {
   font: 700 var(--fs-mini) var(--f-mono);
   line-height: var(--fs-mini);
   color: var(--text2);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .tbambi .tbtext {
@@ -1156,7 +1156,7 @@ menu li a:hover {
   font: 700 italic var(--fs-body) var(--f-mono2);
   line-height: var(--fs-body);
   padding-block: .5em;
-  text-transform: lowercase;
+  text-transform: none;
   text-align: center;
   display: block;
   max-width: 80%;
@@ -1294,7 +1294,7 @@ menu li a:hover {
 .tbtinfo>a {
   font: 700 var(--fs-body) var(--f-mono2);
   line-height: var(--fs-body);
-  text-transform: lowercase;
+  text-transform: none;
   border-bottom: var(--border1);
   align-self: stretch;
   padding-bottom: 8px;
@@ -1538,7 +1538,7 @@ menu li a:hover {
 .gbf-body>a {
   font: calc(var(--fs-h1) * 1.25) var(--f-deco);
   line-height: calc(var(--fs-h1) * 1.25);
-  text-transform: lowercase;
+  text-transform: none;
   text-shadow: 3px 3px var(--accent1);
   margin: -3px 0 0 -3px;
   -webkit-text-stroke: .5px var(--title);
@@ -1572,7 +1572,7 @@ menu li a:hover {
   justify-content: flex-start;
   align-items: center;
   font: 700 italic var(--fs-tiny) var(--f-mono2);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .gbf-links a:not(:last-of-type) {
@@ -2026,7 +2026,7 @@ a.forumtitle {
 .phname a {
   font: calc(var(--fs-h3) + 5px) var(--f-deco);
   line-height: var(--fs-h3);
-  text-transform: lowercase;
+  text-transform: none;
   -webkit-text-stroke: .75px var(--group);
 }
 
@@ -2398,7 +2398,7 @@ a.forumtitle {
   font: 700 italic var(--fs-body) var(--f-mono2);
   line-height: var(--fs-body);
   color: var(--subtitle);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .ppinfo .ppflabel {
