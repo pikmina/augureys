@@ -1258,3 +1258,56 @@ text-align-last:center;
 .post:has(.ncve[data-tablilla="ficha"]) .postprofile {
   display: none;
 }
+
+
+/* Tablillas Nevermore */
+
+minidesc {
+    backdrop-filter: var(--ft-blur);
+    padding: 3rem;
+    display: block;
+    width: 80%;
+    margin: 6px auto;
+    background: var(--tbckg0);
+    corner-shape: scoop;
+    border-radius: 31px;
+}
+
+box {
+    display: block;
+    border: var(--border2);
+    width: 80%;
+    corner-shape: scoop;
+    border-radius: 35px;
+    margin: auto;
+}
+
+box h1 {
+    font: var(--fs-h2) var(--f-deco) !important;
+    color: var(--group-25);
+    -webkit-text-stroke: clamp(.25px, .1em, .5px) var(--group);
+    margin: 10px 0 0 !important;
+    text-align: center;
+    padding-bottom: 0 !important;
+}
+
+box h2 {
+    display: block;
+    padding: 1rem;
+    font: 700 var(--fs-small) var(--f-mono2) !important;
+    text-transform: uppercase;
+    color: var(--titles);
+    text-align: center;
+    border-bottom: var(--border2);
+}
+
+box h3 {
+    text-align: center;
+    font-family: var(--f-mono);
+    font-weight: normal;
+    font-size: var(--fs-mini);
+    letter-spacing: 1px;
+    margin: 5px 0 !important;
+    border-top: var(--border0);
+    padding: 5px 0;
+}
