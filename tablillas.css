@@ -1467,6 +1467,7 @@
 
 /* Tablillas Nevermore */
 
+minidesc,
 content {
     backdrop-filter: var(--ft-blur);
     padding: 3rem;
@@ -1727,6 +1728,9 @@ permiso content {
     display: block;
     padding: 10px;
     text-align: left;
+    background: transparent;
+    margin: 0;
+    width: 100%;
 }
 
 permiso content h1 {
@@ -1801,6 +1805,11 @@ permiso content regid no {
 permiso content .row {
     border-bottom: 4px dotted #584407;
     margin: 1px 0px 5px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
 }
 
 .content permiso content h2 {
@@ -1836,11 +1845,15 @@ comu content {
     line-height: 18px;
     text-align: left;
     border-top: 3px double #58440740;
+    background: transparent;
+    border: none;
 }
 
 comu content {
     border-color: #5c0d5c50;
     text-align: center;
+    background: transparent;
+    border: none;
 }
 
 comu content hr {
@@ -1905,6 +1918,8 @@ boveda {
 boveda content {
     border-bottom: 3px double #970d0d40;
     display: block;
+    background: transparent;
+    border: none;
 }
 
 .content boveda content h2 {
@@ -2030,6 +2045,9 @@ daily content {
     font-size: 1em;
     padding: 0px;
     text-align: justify;
+    background: transparent;
+    margin: 0;
+    width: 100%;
 }
 
 daily content .row .bg-black {
