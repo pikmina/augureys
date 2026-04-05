@@ -1535,10 +1535,9 @@ con {
 }
 
 dat {
-    border-bottom: 2px solid #607d8b50;
+    border-bottom: var(--border0);
     color: #fff;
     display: inline-block;
-    font-family: "Crimson Text", serif;
     font-size: 12px;
     margin: 2px 0 0;
     padding: 0;
@@ -1557,7 +1556,7 @@ con.expand dat lal {
 }
 
 dat lal {
-    background: #607d8b50;
+    background: var(--groupbody-25);
     padding: 5px;
     display: inline-block;
     margin-right: 5px;
@@ -1565,22 +1564,19 @@ dat lal {
 }
 
 .avie {
-    border: 1px solid #607d8b50;
+    border: var(--border2);
     padding: 10px;
-    margin-left: -79px;
-    margin-top: -25px;
+    margin-left: -100px;
+    margin-top: -15px;
+    background: var(--groupbody-25);
 }
 
 .chara-name {
-    color: #fff;
-    display: inline-block;
-    font-family: "Crimson Text";
-    font-size: 20px;
-    position: relative;
-    left: 60px;
-    top: -130px;
-    transform: rotate(90deg);
-    width: 250px;
+    text-transform: none;
+    font: var(--fs-h3) var(--f-deco) !important;
+    color: var(--group-25);
+    margin-bottom: 10px;
+    -webkit-text-stroke: clamp(.25px, .1em, .5px) var(--group);
     text-align: center;
 }
 
@@ -2177,4 +2173,12 @@ pts strong {
     padding: 2px 7px;
     margin-right: 3px;
     border-bottom: none;
+}
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+    margin-bottom: 20px;
 }
