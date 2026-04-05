@@ -1262,7 +1262,7 @@ text-align-last:center;
 
 /* Tablillas Nevermore */
 
-minidesc {
+minidesc, content {
     backdrop-filter: var(--ft-blur);
     padding: 3rem;
     display: block;
