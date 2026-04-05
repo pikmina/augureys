@@ -1589,16 +1589,15 @@ span.profile-rank {
 }
 
 nice {
+    border-bottom: 2px solid #607d8b50;
     display: inline-block;
-    font-family: var(--f-mono);
-    font-size: var(--fs-small);
+    font-family: "Crimson Text";
+    font-size: 12px;
     overflow: hidden;
+    text-align: right;
+    height: 220px;
     line-height: 1.6em;
     width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
-    letter-spacing: -1px;
-    font-style: italic;
 }
 
 dorado,
@@ -1716,18 +1715,18 @@ relas h1 {
 permiso,
 relas {
     padding: 20px;
-    font-family: "Open sans", sans-serif;
+    font-family: var(--f-mono);
     font-size: 0.9em;
 }
 
 permiso content {
-    border: 4px dotted #584407;
+    border: 1px dashed #816d32;
     display: block;
     padding: 10px;
     text-align: left;
     background: transparent;
-    margin: 0;
-    width: 100%;
+    margin: 0px auto;
+    width: 97%;
 }
 
 permiso content h1 {
@@ -1754,21 +1753,21 @@ permiso content auth {
 }
 
 permiso content .row .col-8 {
-    border-right: 4px dotted;
-    border-top: 4px dotted;
+    border-right: 2px dotted;
+    border-top: 2px dotted;
 }
 
 permiso content label {
     padding: 10px;
     background: #e5e5d0;
-    border-bottom: 2px dashed #adad93;
-    margin: 2px 0;
-    min-width: 100%;
+    border-bottom: 0px dashed #adad93;
+    margin: -5px -5px;
+    width: 95%;
+    display: block;
 }
 
 permiso content label strong {
     color: #361806 !important;
-    font-family: "Crimson Text";
     text-transform: uppercase;
     display: inline-block;
     min-width: 70px;
@@ -1778,13 +1777,13 @@ permiso content label strong {
 permiso content regid {
     display: block;
     text-align: center;
-    border-top: 4px dotted #584407;
-    font-family: "Crimson Text";
+    border-top: 2px dotted #584407;
+    font-family: var(--f-mono);
     padding: 10px 0 0 0;
 }
 
 permiso content mano {
-    border-top: 4px dotted #584407;
+    border-top: 2px dotted #584407;
     display: block;
     padding: 10px 0 0 0;
     text-align: center;
@@ -1800,7 +1799,7 @@ permiso content regid no {
 }
 
 permiso content .row {
-    border-bottom: 4px dotted #584407;
+    border-bottom: 2px dotted #584407;
     margin: 1px 0px 5px 0px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1811,11 +1810,11 @@ permiso content .row {
 
 .content permiso content h2 {
     text-align: center;
-    font-family: "Crimson Text";
+    font-family: var(--f-mono);
     color: #584407 !important;
-    border-bottom: 4px dotted #584407 !important;
+    border-bottom: 1px dashed #584407 !important;
     text-transform: uppercase;
-    margin: 0;
+    margin: 5px;
     letter-spacing: 2px;
     font-weight: bold !important;
 }
@@ -2190,4 +2189,11 @@ rowas {
 
 con.expand {
     padding-left: 10px;
+}
+mano u {
+    color: #584407 !important;
+}
+
+permiso i, permiso em {
+    color: #584407 !important;
 }
