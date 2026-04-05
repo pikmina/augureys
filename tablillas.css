@@ -1589,15 +1589,16 @@ span.profile-rank {
 }
 
 nice {
-    border-bottom: 2px solid #607d8b50;
     display: inline-block;
-    font-family: "Crimson Text";
-    font-size: 12px;
+    font-family: var(--f-mono);
+    font-size: var(--fs-small);
     overflow: hidden;
-    text-align: right;
-    height: 220px;
     line-height: 1.6em;
     width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    font-style: italic;
 }
 
 dorado,
@@ -2181,4 +2182,12 @@ pts strong {
     grid-column-gap: 2px;
     grid-row-gap: 2px;
     margin-bottom: 20px;
+}
+
+rowas {
+    display: flex;
+}
+
+con.expand {
+    padding-left: 10px;
 }
