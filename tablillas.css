@@ -1476,7 +1476,7 @@ content {
     margin: 6px auto;
     background: var(--tbckg0);
     corner-shape: scoop;
-    border-radius: 31px;
+    border-radius: 20px;
 }
 
 box {
@@ -1484,7 +1484,7 @@ box {
     border: var(--border2);
     width: 80%;
     corner-shape: scoop;
-    border-radius: 35px;
+    border-radius: 20px;
     margin: auto;
 }
 
@@ -2197,3 +2197,4 @@ mano u {
 permiso i, permiso em {
     color: #584407 !important;
 }
+
