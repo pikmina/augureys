@@ -48,6 +48,7 @@ div#wiki-sidebar h3 a {
 
 ul.wiki-tree {
     list-style: lower-roman;
+    margin: 0 20px;
 }
 .wiki-tree li {
     cursor: pointer;
