@@ -115,7 +115,16 @@ li.wiki-doc, li.wiki-doc-empty {
 .alignright {
     float: right;
 }
+.toc {
+    display: none;
+}
 
+h3.wp-block-heading {
+    color: var(--accent1);
+    font-family: var(--f-titles);
+    font-size: var(--fs-h5);
+    text-transform: none;
+}
 
 
 /* Search */
