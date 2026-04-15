@@ -814,7 +814,7 @@ header a span>em {
 nav {
   gap: 15px;
   height: 100%;
-  padding: 10px 12px;
+  padding: 0px 12px;
   box-sizing: border-box;
   background: var(--nav);
   position: sticky;
@@ -2837,6 +2837,8 @@ nav.secondary-menu .interior {
     cursor: pointer;
 }
 
+
+
 /* Desktop dropdown */
 @media (min-width: 769px) {
     .dropdown-content {
@@ -2844,7 +2846,13 @@ nav.secondary-menu .interior {
         position: absolute;
         background: var(--bg3);
         min-width: 220px;
+         background: var(--dbckg0);
     }
+.dropdown-content a {
+    display: block;
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--border0-c);
+}
 
     .dropdown:hover .dropdown-content {
         display: block;
