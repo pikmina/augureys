@@ -1024,7 +1024,7 @@ menu li a:hover {
   grid-template-rows: 1fr .5fr 40px;
   grid-template-areas:
 'staff ambi nov last'
-'staff ambi tramas last'
+'staff ambi tramas casas'
 'staff links links links';
 }
 
