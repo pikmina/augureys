@@ -1023,9 +1023,9 @@ menu li a:hover {
   grid-template-columns: 100px .9fr .9fr 1.3fr;
   grid-template-rows: 1fr .5fr 40px;
   grid-template-areas:
-    'staff ambi nov last'
-    'staff ambi tramas last'
-    'staff ambi tramas last';
+'staff ambi nov last'
+'staff ambi tramas last'
+'staff links links links';
 }
 
 .tbtext {
