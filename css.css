@@ -2923,3 +2923,14 @@ nav.secondary-menu .interior {
         display: block;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    body#phpbb {
+        width: 130% !important;
+        padding-right: 312px !important;
+    }
+        #cuerpo {
+        margin: 100px auto;
+        width: 100% !important;
+    }
+}
