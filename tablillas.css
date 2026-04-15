@@ -1488,6 +1488,14 @@ box {
     margin: auto;
 }
 
+.content box content blockquote {
+    background-color: var(--dbckg2);
+    padding: 10px;
+    margin: 5px 20px;
+    border-left: var(--border2) !important;
+    border: none;
+}
+
 box h1 {
     font: var(--fs-h2) var(--f-deco) !important;
     color: var(--group-25);
