@@ -2926,11 +2926,10 @@ nav.secondary-menu .interior {
 
 @media only screen and (max-width: 767px) {
     body#phpbb {
-        width: 130% !important;
-        padding-right: 312px !important;
+        width: 160% !important!
     }
         #cuerpo {
         margin: 100px auto;
-        width: 100% !important;
+        width: 130% !important;
     }
 }
