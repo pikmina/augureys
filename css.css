@@ -1230,7 +1230,6 @@ menu li a:hover {
 .tblinks {
   grid-area: links;
   gap: 1px;
-  display: none;
   align-items: stretch;
 }
 
