@@ -2932,3 +2932,15 @@ nav.secondary-menu .interior {
         width: 130% !important;
     }
 }
+.casa {
+    text-align: center;
+    overflow: auto;
+    background: var(--cuerpo);
+    backdrop-filter: var(--ft-blur);
+    flex: auto;
+    padding: 35px 10px;
+}
+
+.casa span {
+    display: block;
+}
