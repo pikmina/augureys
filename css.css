@@ -2858,6 +2858,10 @@ nav.secondary-menu .interior {
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
+  .navuser {
+        display: none !important;
+    }
+
     /* Botón hamburguesa */
     .menu-toggle {
         display: block;
